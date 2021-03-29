@@ -1,23 +1,23 @@
 module.exports = {
   development: {
     username: 'root',
-    password: '123456',
+    password: 'asd112255',
     database: 'node',
     host: 'localhost',
-    dialect: 'mysql'
+    dialect: 'mysql',
   },
   test: {
     username: 'root',
     password: '123456',
     database: 'node',
     host: 'localhost',
-    dialect: 'mysql'
+    dialect: 'mysql',
   },
   production: {
     username: 'root',
     password: '123456',
     database: 'node',
     host: 'localhost',
-    dialect: 'mysql'
-  }
+    dialect: 'mysql',
+  },
 };

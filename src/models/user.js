@@ -5,23 +5,23 @@ export default (sequelize, DataTypes) => {
       id: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
-        primaryKey: true
+        primaryKey: true,
       },
       email: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
       },
       password: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
       },
       email_verified: {
-        type: DataTypes.DATE
-      }
+        type: DataTypes.DATE,
+      },
     },
     {
       sequelize,
       modelName: 'users',
-      freezeTableName: true
-    }
+      freezeTableName: true,
+    },
   );
   return users;
 };
