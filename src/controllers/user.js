@@ -1,6 +1,5 @@
-import models from '../models/index';
 import _ from 'lodash';
-import { QueryTypes } from 'sequelize';
+import models from '../models/index';
 
 const { users } = models;
 
@@ -11,15 +10,13 @@ class UserController {
     // });
     // const user = _.head(pureCommand);
     const user = await users.findAll({
-      attributes: { exclude: ['password'] }
+      attributes: { exclude: ['password'] },
     });
-    const response = _.map(user, o => {
-      return {
-        ...o.dataValues,
-        vip: true
-      };
-    });
-    res.status(200).json({ user });
+    const response = _.map(user, (o) => ({
+      ...o.dataValues,
+      vip: true,
+    }));
+    res.status(200).json({ response });
   };
 
   postUser = async (req, res) => {
@@ -27,7 +24,7 @@ class UserController {
     const { email, password } = body;
     const user = await users.create({
       email,
-      password
+      password,
     });
     res.status(200).json({ user });
   };
